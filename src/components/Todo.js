@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
 
+
 export const Todo = ({ todo, index, markTodo, removeTodo }) => {
   return (
     <div className="todo">

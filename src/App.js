@@ -30,14 +30,26 @@ function App() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
-
+  
+  const [isDark,setIsDark] = useState("");
   return (
-    <div className="App">
+    <div>
+    <div className="App" style={{backgroundColor: isDark? "black" : "white",color:isDark? "white" : "black" }}>
       <div className="container">
-        <h1 className="text-center mb-4">
+        <div className="todo-header">
+        <h1 className="mb-4" style={{color: isDark? "white" : "black"}}>
           <FcTodoList /> TODO LIST <FcTodoList />
         </h1>
-        <FormTodo addTodo={addTodo} />
+        <label className="theme-mode" style={{color:isDark? "white" : "black",fontSize:"20px"}}>
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={e => setIsDark(e.target.checked)}
+        />
+        Dark Mode
+      </label>
+      </div>
+        <FormTodo addTodo={addTodo} isDark={isDark} />
         <div>
           {todos.map((todo, index) => (
             <Card>
@@ -54,6 +66,7 @@ function App() {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ export const FormTodo = ({ addTodo }) => {
     setValue("");
   };
   return (
+    <div>
     <Form onSubmit={handleSubmit}>
       <Form.Group>
         <FormLabel> Add Todo </FormLabel>
@@ -26,5 +27,6 @@ export const FormTodo = ({ addTodo }) => {
         Add
       </Button>
     </Form>
+    </div>
   );
 };

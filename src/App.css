@@ -10,3 +10,13 @@
   font-size: 18px;
   justify-content: space-between;
 }
+
+span {
+  color:black;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+}
+
